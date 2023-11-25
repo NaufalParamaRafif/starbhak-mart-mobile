@@ -35,7 +35,7 @@ class _MainPageState extends State<MainPage> {
           if (newIndex == 1) {
             Navigator.pushReplacement(context,
                 MaterialPageRoute(builder: (context) {
-              return shopping();
+              return Shopping();
             }));
           }
           if (newIndex == 2) {
