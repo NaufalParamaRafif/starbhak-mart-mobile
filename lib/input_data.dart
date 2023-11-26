@@ -1,13 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/form_submit.dart';
+import 'main.dart';
 
 void main() => runApp(MaterialApp(
       home: InputData(),
     ));
 
-class InputData extends StatelessWidget {
-  const InputData({super.key});
+class InputData extends StatefulWidget {
+  @override
+  _InputDataState createState() => _InputDataState();
+}
 
+class _InputDataState extends State<InputData> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +40,12 @@ class InputData extends StatelessWidget {
             ],
           ),
           child: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context) {
+                  return MainPage();
+              }));
+            },
             icon: Icon(Icons.arrow_back_ios_new, color: Colors.orange),
           ),
         ),
@@ -623,7 +633,12 @@ class InputData extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(context,
+                            MaterialPageRoute(builder: (context) {
+                              return FormSubmit();
+                          }));
+                        },
                         child: Text(
                           "Checkout",
                           style: TextStyle(

@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'input_data.dart';
 
 void main() => runApp(MaterialApp(
-      home: FormSubmit(),
-    ));
+  home: FormSubmit(),
+));
 
-class FormSubmit extends StatelessWidget {
-  const FormSubmit({super.key});
+class FormSubmit extends StatefulWidget {
+  @override
+  _FormSubmitState createState() => _FormSubmitState();
+}
 
+class _FormSubmitState extends State<FormSubmit> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +37,12 @@ class FormSubmit extends StatelessWidget {
             ],
           ),
           child: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context) {
+                  return InputData();
+              }));
+            },
             icon: Icon(Icons.arrow_back_ios_new, color: Colors.orange),
           ),
         ),
@@ -127,7 +136,6 @@ class FormSubmit extends StatelessWidget {
                       foregroundColor: Colors.white,
                     ),
                     onPressed: () {
-                      // Add your form submission logic here
                     },
                     child: Text('Submit', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),),
                   ),

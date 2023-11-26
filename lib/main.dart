@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'shopping_page.dart';
+import 'input_data.dart';
 
 void main() {
   runApp(
@@ -86,7 +87,10 @@ class _MainPageState extends State<MainPage> {
             }));
           }
           if (newIndex == 2) {
-
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context) {
+              return InputData();
+            }));
           }
         },
         items: [
@@ -110,47 +114,3 @@ class _MainPageState extends State<MainPage> {
     );
   }
 }
-
-// import 'package:flutter/material.dart';
-
-// void main() {
-//   runApp(
-//     MaterialApp(home: MainPage()), // use MaterialApp
-//   );
-// }
-
-// class MainPage extends StatefulWidget {
-//   @override
-//   _MainPageState createState() => _MainPageState();
-// }
-
-// class _MainPageState extends State<MainPage> {
-//   int index = 0;
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       bottomNavigationBar: NavigationBar(
-//         height: 60,
-//         selectedIndex: index,
-//         onDestinationSelected: (index) => setState(() => this.index = index),
-//         destinations: [
-//           NavigationDestination(
-//             icon: Icon(Icons.home_outlined),
-//             selectedIcon: Icon(Icons.home),
-//             label: 'Page 1',
-//           ),
-//           NavigationDestination(
-//             icon: Icon(Icons.shopping_cart_checkout_outlined),
-//             selectedIcon: Icon(Icons.shopping_cart_outlined),
-//             label: 'Page 2',
-//           ),
-//           NavigationDestination(
-//             icon: Icon(Icons.list_alt_outlined),
-//             selectedIcon: Icon(Icons.list),
-//             label: 'Page 1',
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }

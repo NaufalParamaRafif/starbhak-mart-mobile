@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'main.dart';
 
 void main() => runApp(MaterialApp(
-      home: Shopping(),
-    ));
+  home: Shopping(),
+));
 
-class Shopping extends StatelessWidget {
-  const Shopping({super.key});
+class Shopping extends StatefulWidget {
+  @override
+  _ShoppingState createState() => _ShoppingState();
+}
 
+class _ShoppingState extends State<Shopping> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +37,12 @@ class Shopping extends StatelessWidget {
             ],
           ),
           child: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context) {
+                  return MainPage();
+              }));
+            },
             icon: Icon(Icons.arrow_back_ios_new, color: Colors.orange),
           ),
         ),
