@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'main.dart'; // Import the main.dart file or adjust the import path accordingly
+import 'main.dart';
 
 void main() {
   runApp(SplashScreenApp());
@@ -11,7 +11,6 @@ class SplashScreenApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: SplashScreen(),
-      // ... other configurations for your app
     );
   }
 }
@@ -25,11 +24,9 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    // Add a delay to simulate the splash screen
     Timer(
-      Duration(seconds: 3), // Adjust the duration as needed
+      Duration(seconds: 3),
       () {
-        // Navigate to the main screen after the splash screen
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
             builder: (BuildContext context) => MainPage(),

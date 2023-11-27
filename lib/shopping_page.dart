@@ -72,43 +72,52 @@ class _ShoppingState extends State<Shopping> {
         ],
       ),
       body: Container(
-        child: Center(
-          child: DataTable(
-          columns: [
-            DataColumn(
-              label: Text('Foto'),
-            ),
-            DataColumn(
-              label: Text('Nama Produk'),
-            ),
-            DataColumn(
-              label: Text('Harga'),
-            ),
-            DataColumn(
-              label: Text('Aksi'),
-            ),
-          ], 
-          rows: [
-            DataRow(cells: [
-              DataCell(Image.asset("assets/images/burger.jpg", height: 40,)),
-              DataCell(Text('Burger')),
-              DataCell(Text('Rp. 30.000,00')),
-              DataCell(Icon(Icons.delete_forever_outlined, color: Colors.red,)),
-            ],),
-            DataRow(cells: [
-              DataCell(Image.asset("assets/images/tempatpensil.jpeg", height: 40,)),
-              DataCell(Text('Tempat Pensil')),
-              DataCell(Text('Rp. 20.000,00')),
-              DataCell(Icon(Icons.delete_forever_outlined, color: Colors.red,)),
-            ],),
-            DataRow(cells: [
-              DataCell(Image.asset("assets/images/sanqua.jpg", height: 40,)),
-              DataCell(Text('Sanqua')),
-              DataCell(Text('Rp. 5.000,00')),
-              DataCell(Icon(Icons.delete_forever_outlined, color: Colors.red,)),
-            ],),
-        ],),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+          DataTable(
+            columns: [
+              DataColumn(
+                label: Text('Foto'),
+              ),
+              DataColumn(
+                label: Text('Nama Produk'),
+              ),
+              DataColumn(
+                label: Text('Harga'),
+              ),
+              DataColumn(
+                label: Text('Aksi'),
+              ),
+            ], 
+            rows: [
+              DataRow(cells: [
+                DataCell(Image.asset("assets/images/burger.jpg", height: 40,)),
+                DataCell(Text('Burger')),
+                DataCell(Text('Rp. 30.000,00')),
+                DataCell(Icon(Icons.delete_forever_outlined, color: Colors.red,)),
+              ],),
+              DataRow(cells: [
+                DataCell(Image.asset("assets/images/kebab.jpg", height: 40, width: 50,)),
+                DataCell(Text('Kebab')),
+                DataCell(Text('Rp. 20.000,00')),
+                DataCell(Icon(Icons.delete_forever_outlined, color: Colors.red,)),
+              ],),
+              DataRow(cells: [
+                DataCell(Image.asset("assets/images/sanqua.jpg", height: 40,)),
+                DataCell(Text('Sanqua')),
+                DataCell(Text('Rp. 5.000,00')),
+                DataCell(Icon(Icons.delete_forever_outlined, color: Colors.red,)),
+              ],),
+          ],),
+        ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+        },
+        child: Icon(Icons.add, color: Colors.white,),
+        backgroundColor: Colors.blue,
       ),
     );
   }
