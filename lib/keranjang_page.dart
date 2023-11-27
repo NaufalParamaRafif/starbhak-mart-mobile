@@ -1,18 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/form_submit.dart';
-import 'main.dart';
+import 'main_page.dart';
 
 void main() => runApp(MaterialApp(
-      home: InputData(),
+      home: KeranjangPage(),
     ));
 
-class InputData extends StatefulWidget {
+class KeranjangPage extends StatefulWidget {
   @override
-  _InputDataState createState() => _InputDataState();
+  _KeranjangPageState createState() => _KeranjangPageState();
 }
 
-class _InputDataState extends State<InputData> {
+class _KeranjangPageState extends State<KeranjangPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -269,7 +269,7 @@ class _InputDataState extends State<InputData> {
                                     borderRadius: BorderRadius.circular(10),
                                   ),
                                   child: Image.asset(
-                                  "assets/images/tempatpensil.jpeg",
+                                  "assets/images/kebab.jpg",
                                   height: 130,
                                   width: 130,
                                   fit: BoxFit.contain,
@@ -285,7 +285,7 @@ class _InputDataState extends State<InputData> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  "Tempat Pensil",
+                                  "Kebab",
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 18,
@@ -293,7 +293,7 @@ class _InputDataState extends State<InputData> {
                                   ),
                                 ),
                                 Text(
-                                  "Rp. 23.000,00",
+                                  "Rp. 20.000,00",
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.w500,
@@ -634,10 +634,6 @@ class _InputDataState extends State<InputData> {
                           ),
                         ),
                         onPressed: () {
-                          Navigator.pushReplacement(context,
-                            MaterialPageRoute(builder: (context) {
-                              return FormSubmit();
-                          }));
                         },
                         child: Text(
                           "Checkout",

@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-import 'main.dart';
+import 'package:flutter_application_1/form_submit.dart';
+import 'main_page.dart';
 
 void main() => runApp(MaterialApp(
-  home: Shopping(),
+  home: InputBarang(),
 ));
 
-class Shopping extends StatefulWidget {
+class InputBarang extends StatefulWidget {
   @override
-  _ShoppingState createState() => _ShoppingState();
+  _InputBarangState createState() => _InputBarangState();
 }
 
-class _ShoppingState extends State<Shopping> {
+class _InputBarangState extends State<InputBarang> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -115,6 +116,10 @@ class _ShoppingState extends State<Shopping> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+          Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) {
+              return FormSubmit();
+          }));
         },
         child: Icon(Icons.add, color: Colors.white,),
         backgroundColor: Colors.blue,

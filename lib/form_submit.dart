@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'input_data.dart';
+import 'package:flutter_application_1/input_barang.dart';
+import 'keranjang_page.dart';
 
 void main() => runApp(MaterialApp(
   home: FormSubmit(),
@@ -40,7 +41,7 @@ class _FormSubmitState extends State<FormSubmit> {
             onPressed: () {
               Navigator.pushReplacement(context,
                 MaterialPageRoute(builder: (context) {
-                  return InputData();
+                  return InputBarang();
               }));
             },
             icon: Icon(Icons.arrow_back_ios_new, color: Colors.orange),
