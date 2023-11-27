@@ -73,7 +73,7 @@ class _InputBarangState extends State<InputBarang> {
         ],
       ),
       body: Container(
-        child: Column(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
           DataTable(

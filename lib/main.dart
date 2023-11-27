@@ -39,8 +39,15 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.purple,
       body: Center(
-        child: Icon(Icons.store_mall_directory_outlined)
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.shopping_bag, color: Colors.white, size: 30,),
+            Text("Starbhak Mart", style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),),
+          ],
+        ),
       ),
     );
   }
