@@ -73,10 +73,9 @@ class _InputBarangState extends State<InputBarang> {
         ],
       ),
       body: Container(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-          DataTable(
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: DataTable(
             columns: [
               DataColumn(
                 label: Text('Foto'),
@@ -111,7 +110,6 @@ class _InputBarangState extends State<InputBarang> {
                 DataCell(Icon(Icons.delete_forever_outlined, color: Colors.red,)),
               ],),
           ],),
-        ],
         ),
       ),
       floatingActionButton: FloatingActionButton(

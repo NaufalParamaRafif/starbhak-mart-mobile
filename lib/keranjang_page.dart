@@ -18,7 +18,7 @@ class _KeranjangPageState extends State<KeranjangPage> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Color.fromARGB(255, 174, 204, 255),
         elevation: 0,
         title: Text(
           "Cart",
@@ -75,13 +75,13 @@ class _KeranjangPageState extends State<KeranjangPage> {
         ],
       ),
       body: Container(
+        // margin: EdgeInsets.only(top: 55,),
         padding: EdgeInsets.only(top: 60,),
-        color: const Color.fromARGB(255, 174, 204, 255),
+        color: Color.fromARGB(255, 174, 204, 255),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              // height: 500,
               child: SingleChildScrollView(
                 child: Column(
                   children: [

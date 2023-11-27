@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/input_barang.dart';
+import 'input_barang.dart';
 import 'keranjang_page.dart';
 
 void main() => runApp(MaterialApp(
