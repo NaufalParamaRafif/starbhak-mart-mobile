@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'input_barang.dart';
 import 'keranjang_page.dart';
 
+const List<String> pilihan = <String>['All', 'Makanan', 'Minuman'];
+
 void main() => runApp(MaterialApp(
   home: FormSubmit(),
 ));
@@ -12,6 +14,7 @@ class FormSubmit extends StatefulWidget {
 }
 
 class _FormSubmitState extends State<FormSubmit> {
+  String dropdownValue = pilihan.first;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,49 +81,125 @@ class _FormSubmitState extends State<FormSubmit> {
           children: [
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-              child: TextField(
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.only(left: 20,),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.white,
+                  boxShadow: [BoxShadow(
+                    color: Colors.grey.withOpacity(0.3),
+                    spreadRadius: 5,
+                    blurRadius: 5,
+                    offset: Offset(0, 3),
+                  ),]
+                ),
+                child: TextField(
+                  decoration: InputDecoration(
+                    contentPadding: EdgeInsets.only(left: 20,),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    hintText: 'Masukkan nama produk',
                   ),
-                  hintText: 'Masukkan nama produk',
                 ),
               ),
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-              child: TextField(
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.only(left: 20,),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.white,
+                  boxShadow: [BoxShadow(
+                    color: Colors.grey.withOpacity(0.3),
+                    spreadRadius: 5,
+                    blurRadius: 5,
+                    offset: Offset(0, 3),
+                  ),]
+                ),
+                child: TextField(
+                  decoration: InputDecoration(
+                    contentPadding: EdgeInsets.only(left: 20,),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    hintText: 'Masukkan harga',
                   ),
-                  hintText: 'Masukkan harga',
                 ),
               ),
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-              child: TextField(
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.only(left: 20,),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25),
+                  color: Colors.white,
+                  boxShadow: [BoxShadow(
+                    color: Colors.grey.withOpacity(0.3),
+                    spreadRadius: 5,
+                    blurRadius: 5,
+                    offset: Offset(0, 3),
+                  ),]
+                ),
+                child: DropdownMenu<String>(
+                inputDecorationTheme: InputDecorationTheme(
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(25),
+                    )
                   ),
-                  hintText: 'Makanan',
+                  width: 375,
+                  initialSelection: pilihan.first,
+                  onSelected: (String? value) {
+                    setState(() {
+                      dropdownValue = value!;
+                    });
+                  },
+                  dropdownMenuEntries: pilihan.map<DropdownMenuEntry<String>>((String value) {
+                    return DropdownMenuEntry<String>(value: value, label: value);
+                  }).toList(),
                 ),
               ),
             ),
+            // Padding(
+            //   padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+            //   child: DropdownMenu<String>(
+            //     inputDecorationTheme: InputDecorationTheme(
+            //       border: OutlineInputBorder(
+            //         borderRadius: BorderRadius.circular(25),
+            //       )
+            //     ),
+            //     width: 375,
+            //     initialSelection: pilihan.first,
+            //     onSelected: (String? value) {
+            //       setState(() {
+            //         dropdownValue = value!;
+            //       });
+            //     },
+            //     dropdownMenuEntries: pilihan.map<DropdownMenuEntry<String>>((String value) {
+            //       return DropdownMenuEntry<String>(value: value, label: value);
+            //     }).toList(),
+            //   ),
+            // ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-              child: TextField(
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.only(left: 20,),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.white,
+                  boxShadow: [BoxShadow(
+                    color: Colors.grey.withOpacity(0.3),
+                    spreadRadius: 5,
+                    blurRadius: 5,
+                    offset: Offset(0, 3),
+                  ),]
+                ),
+                child: TextField(
+                  decoration: InputDecoration(
+                    contentPadding: EdgeInsets.only(left: 20,),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    hintText: 'Choose file',
                   ),
-                  hintText: 'Choose file',
                 ),
               ),
             ),
